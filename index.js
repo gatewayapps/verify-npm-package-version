@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 try {
   const repoName = github.context.payload.repository.name;
-  const packagePath = `/github/workspace/${repoName}`;
+  const packagePath = `/github/workspace/${repoName}/package.json`;
 
   const packageInfo = require(packagePath);
   if (github.context.payload.ref) {
