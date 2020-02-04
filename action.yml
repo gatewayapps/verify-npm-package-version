@@ -1,0 +1,5 @@
+name: "GitHub Action for Verifying Node Package Module Version"
+description: "Verifies that a NPM package matches the current tag"
+runs:
+  using: "ubuntu"
+  main: "entry.sh"
