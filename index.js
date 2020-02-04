@@ -1,11 +1,14 @@
+const path = require("path");
 const core = require("@actions/core");
 const github = require("@actions/github");
 
 try {
-  const repoName = github.context.payload.repository.name;
-  const packagePath = `./package.json`;
+  const finalPackagePath = path.join(
+    process.env.GITHUB_WORKSPACE,
+    "package.json"
+  );
 
-  const packageInfo = require(packagePath);
+  const packageInfo = require(finalPackagePath);
   if (github.context.payload.ref) {
     const ref = github.context.payload.ref;
     const refVersionParts = ref.split(/\//gi);
