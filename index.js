@@ -12,12 +12,16 @@ try {
     const refVersion = refVersionParts[refVersionParts.length - 1];
 
     if (packageInfo.version.toLowerCase() !== refVersion.toLowerCase()) {
-      process.exit(1);
+      core.setFailed(
+        `Package version is ${packageInfo.version}, tag version is ${refVersion}`
+      );
     } else {
       process.exit(0);
     }
+  } else {
+    core.setFailed("This action can only be called from a tagged ref");
   }
 } catch (err) {
   console.error(err);
+  core.setFailed(err.message);
 }
-process.exit(1);

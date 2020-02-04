@@ -1,0 +1,25 @@
+{
+  "name": "verify-npm-package-version",
+  "version": "1.0.0",
+  "description": "Verify that a node module package version matches the current tag",
+  "main": "index.js",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatewayapps/verify-npm-package-version.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gatewayapps/verify-npm-package-version/issues"
+  },
+  "homepage": "https://github.com/gatewayapps/verify-npm-package-version#readme"
+}
