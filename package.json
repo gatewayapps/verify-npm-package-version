@@ -4,7 +4,7 @@
   "description": "Verify that a node module package version matches the current tag",
   "main": "index.js",
   "dependencies": {
-    "@actions/core": "^1.2.2",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.1.0"
   },
   "devDependencies": {},
