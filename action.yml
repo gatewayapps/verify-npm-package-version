@@ -3,3 +3,8 @@ description: "Verifies that a NPM package matches the current tag"
 runs:
   using: "node12"
   main: "index.js"
+inputs:
+  versionFilePath:
+    description: Path to a JSON file containing a root version field
+    required: false
+    default: ./package.json

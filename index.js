@@ -1,12 +1,17 @@
 const path = require("path");
 const core = require("@actions/core");
 const github = require("@actions/github");
+const fs = require('fs')
 
 try {
-  const finalPackagePath = path.join(
+  const finalPackagePath = path.resolve(
     process.env.GITHUB_WORKSPACE,
-    "package.json"
+    core.getInput("versionFilePath")
   );
+
+  if(!fs.existsSync(finalPackagePath)){
+    throw new Error(`Version file path not found: ${finalPackagePath}`)
+  }
 
   const packageInfo = require(finalPackagePath);
   if (github.context.payload.ref) {
